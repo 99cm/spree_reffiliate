@@ -54,7 +54,7 @@ Spree::User.class_eval do
         referred = Spree::Referral.where('lower(code) = ?', referral_code.downcase).first
         if referred
           store_credit = create_store_credits(referred.user) if referrer_eligible?(referred.user)
-          referred.referred_records.create(user: self, store_credit_id: store_credit.try(:id))
+          referred.referred_records.create(user: self)
         end
       end
     end
@@ -78,10 +78,7 @@ Spree::User.class_eval do
     end
 
     def create_store_credits(referrer)
-      referrer.store_credits.create(amount: referral_amount(referrer),
-                                    category_id: referral_store_credit_category.try(:id),
-                                    created_by: Spree::User.admin.try(:first),
-                                    currency: Spree::Config.currency)
+      referrer.loyalty_points_balance += 100
     end
 
     def referral_amount(referrer)
