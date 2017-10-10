@@ -1,18 +1,18 @@
 <br/>
 <div class="row">
-  <dd class='col-md-6'>
-    <dt>Referral URL</dt>
+  <dd class='col-sm-6 text-left'>
+    <div><b>Referral URL</b></div>
     <div class="input-group">
-      <input type='text' data-coupon-code=true value='<%= referral_url(@user.referral.code) %>' class='form-control' />
+      <input type='text' data-coupon-code=true value='<%= referral_url(@user.referral.code) %>' disabled="disabled" />
       <span class="input-group-btn">
         <button class="btn btn-primary" data-copy-coupon-code=true type="button" title='Copy to clipboard'><span class='glyphicon glyphicon-copy'></span></button>
       </span>
     </div>
   </dd>
-  <div class='col-md-6'>
-    <dt>Referred Users</dt>
-    <dd><%= @user.referred_count%></dd>
-    <dd><%= link_to Spree.t(:details, scope: :referral), account_referral_details_path %>
+  <div class='col-sm-6'>
+    <div><b>Referred Users</b></div>
+    <div><%= @user.referred_count%></div>
+    <%= link_to Spree.t(:details, scope: :referral), account_referral_details_path %>
   </div>
 </div>
 <br>
