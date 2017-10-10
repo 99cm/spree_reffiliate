@@ -54,6 +54,7 @@ Spree::User.class_eval do
         referred = Spree::Referral.where('lower(code) = ?', referral_code.downcase).first
         if referred
           store_credit = create_store_credits(referred.user) if referrer_eligible?(referred.user)
+          referred.user.save!
           referred.referred_records.create(user: self)
         end
       end
