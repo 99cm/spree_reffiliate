@@ -1,6 +1,5 @@
 module Spree
   class Affiliate < Spree::Base
-
     attr_accessor :user, :active_on_create
 
     has_many :referred_records

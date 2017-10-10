@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'spree', github: 'spree/spree', branch: 'master'
+gem 'spree', github: 'spree/spree', branch: '3-1-stable'
 # Provides basic authentication functionality for testing parts of your engine
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-1-stable'
 
-group :test do
-  gem 'rails-controller-testing'
-  gem 'codeclimate-test-reporter', require: nil
-end
-
+gem "codeclimate-test-reporter", group: :test, require: nil
 gemspec
