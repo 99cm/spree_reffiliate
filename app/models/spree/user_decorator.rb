@@ -79,7 +79,7 @@ Spree::User.class_eval do
     end
 
     def create_store_credits(referrer)
-      referrer.loyalty_points_balance += 100
+      referrer.loyalty_points_balance += 50
     end
 
     def referral_amount(referrer)
