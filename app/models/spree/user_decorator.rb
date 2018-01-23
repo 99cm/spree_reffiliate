@@ -80,8 +80,6 @@ Spree::User.class_eval do
 
     def create_store_credits(referrer)
       referrer.loyalty_points_balance += 50
-      @item = Spree::LoyaltyPointsTransaction.new(loyalty_points: 50, comment: "Referral", user_id: referrer.id, type: 'Spree::LoyaltyPointsCreditTransaction')
-      @item.save!
     end
 
     def referral_amount(referrer)
