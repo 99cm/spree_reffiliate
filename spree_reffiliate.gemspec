@@ -19,20 +19,5 @@ Gem::Specification.new do |s|
   s.test_files   = s.files.grep(%r{^spec/})
   s.require_path = 'lib'
 
-  s.add_dependency 'spree_core', '~> 3.1.0.beta'
-
-  s.add_development_dependency 'capybara', '~> 2.5'
-  s.add_development_dependency 'coffee-rails', '~> 4.0.0'
-  s.add_development_dependency 'database_cleaner', '~> 1.3'
-  s.add_development_dependency 'factory_girl', '~> 4.5'
-  s.add_development_dependency 'ffaker', '>= 1.25.0'
-  s.add_development_dependency 'rspec-rails', '~> 3.4'
-  s.add_development_dependency 'sass-rails', '~> 5.0.0'
-  s.add_development_dependency 'selenium-webdriver', '>= 2.41'
-  s.add_development_dependency 'simplecov', '~> 0.9.0'
-  s.add_development_dependency 'sqlite3', '~> 1.3.10'
-  s.add_development_dependency 'mysql2'
-  s.add_development_dependency 'pg'
-  s.add_development_dependency 'shoulda-matchers'
-  s.add_development_dependency 'shoulda-callback-matchers'
+  s.add_dependency 'spree_core', '>= '
 end
