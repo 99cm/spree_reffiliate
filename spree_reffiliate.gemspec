@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.test_files   = s.files.grep(%r{^spec/})
   s.require_path = 'lib'
 
-  s.add_dependency 'spree_core', '>= '
+  s.add_dependency 'spree_core', '>= 3.1'
 end
