@@ -13,7 +13,7 @@
   <div class='col-sm-6'>
     <div><b>Referred Users</b></div>
     <div><%= @user.referred_count%></div>
-    <%= link_to Spree.t(:details, scope: :referral), account_referral_details_path %>
+    <%= link_to t('spree.details', scope: :referral), account_referral_details_path %>
   </div>
 </div>
 <br>
