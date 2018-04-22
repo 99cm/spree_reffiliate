@@ -1,17 +1,17 @@
 <% if @user && @user.associated_partner.present? %>
-  <h3><%= Spree.t(:my_transaction) %></h3>
+  <h3><%= t('spree.my_transaction') %></h3>
   <% @commission_transactions  = @user.associated_partner.transactions %>
   <% if @commission_transactions.any? %>
     <table class="table" id="listing_affiliates" data-hook>
       <thead>
         <tr data-hook="admin_affiliates_index_headers">
-          <th><%= Spree.t(:reference) %></th>
-          <th><%= Spree.t(:type) %></th>
+          <th><%= t('spree.reference') %></th>
+          <th><%= t('spree.type') %></th>
           <th>
-            <%= Spree.t(:date) %>
+            <%= t('spree.date') %>
           </th>
-          <th><%= Spree.t(:amount) %></th>
-          <th><%= Spree.t(:locked) %></th>
+          <th><%= t('spree.amount') %></th>
+          <th><%= t('spree.locked') %></th>
         </tr>
       </thead>
       <tbody>
