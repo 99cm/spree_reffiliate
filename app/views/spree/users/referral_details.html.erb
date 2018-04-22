@@ -1,12 +1,12 @@
-<h3><%= Spree.t(:referred_users) %></h3>
+<h3><%= t('spree.referred_users') %></h3>
 
 <% if @referred_records.any? %>
   <table class="table">
     <thead>
       <tr>
-        <th><%= Spree.t(:referred_user) %></th>
+        <th><%= t('spree.referred_user') %></th>
         <th>Mini Points Received</th>
-        <th><%= Spree.t(:date) %></th>
+        <th><%= t('spree.date') %></th>
         <th data-hook="referred_users_index_header_actions" class="actions"></th>
       </tr>
     </thead>
@@ -22,7 +22,7 @@
   </table>
 <% else %>
   <div class="alert alert-info no-objects-found">
-    <%= Spree.t(:zero_reffered_count) %>,
+    <%= t('spree.zero_reffered_count') %>,
   </div>
 <% end %>
 <%= paginate @referred_records %>
