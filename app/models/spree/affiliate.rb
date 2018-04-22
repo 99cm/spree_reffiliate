@@ -1,5 +1,6 @@
 module Spree
   class Affiliate < Spree::Base
+
     attr_accessor :user, :active_on_create
 
     has_many :referred_records
@@ -37,7 +38,8 @@ module Spree
     end
 
     def referred_orders
-      referred_records.includes({user: :orders}).collect{|u| u.user.orders }.flatten.compact
+      order_ids = transactions.where(commissionable_type: 'Spree::Order').pluck(:commissionable_id)
+      Spree::Order.where(id: order_ids)
     end
 
     def referred_count
@@ -46,6 +48,10 @@ module Spree
 
     def get_layout
       layout == 'false' ? false : layout
+    end
+
+    def referred_orders_count
+      transactions.where(commissionable_type: 'Spree::Order').count
     end
 
     private
