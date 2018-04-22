@@ -1,13 +1,13 @@
 <% content_for :page_title do %>
-  <%= link_to "#{Spree.t(:editing_affiliate)} #{@affiliate.name}", edit_admin_affiliate_url(@affiliate) %>
+  <%= link_to "#{t('spree.editing_affiliate')} #{@affiliate.name}", edit_admin_affiliate_url(@affiliate) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_affiliates_list), admin_affiliates_path, class: 'btn btn-default' %>
+  <%= link_to_with_icon 'arrow-left', t('spree.back_to_affiliates_list'), admin_affiliates_path, class: 'btn btn-default' %>
 <% end %>
 
 <fieldset data-hook="admin_affiliate_edit_general_settings" class="alpha twelve columns">
-  <legend><%= Spree.t(:general_settings) %></legend>
+  <legend><%= t('spree.general_settings') %></legend>
 
   <div data-hook="admin_affiliate_edit_form_header">
     <%= render partial: 'spree/shared/error_messages', locals: { target: @affiliate } %>
@@ -25,7 +25,7 @@
 </fieldset>
 <br/>
 <fieldset data-hook="admin_affiliate_edit_stats" class="alpha twelve columns">
-  <legend><%= Spree.t(:statistics) %></legend>
+  <legend><%= t('spree.statistics') %></legend>
   <table class='table'>
     <tbody>
       <tr>
@@ -46,7 +46,7 @@
       </tr>
       <tr>
         <th>Referred orders</th>
-        <td><%= @affiliate.referred_orders.count %></td>
+        <td><%= @affiliate.referred_orders_count %></td>
       </tr>
       <tr>
         <th>Orders referred</th>
