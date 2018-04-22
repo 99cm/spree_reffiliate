@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:listing_commissions) %>
+  <%= t('spree.listing_commissions') %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_affilate), edit_admin_affiliate_path(@affiliate), class: 'btn btn-default' %>
+  <%= link_to_with_icon 'arrow-left', t('spree.back_to_affilate'), edit_admin_affiliate_path(@affiliate), class: 'btn btn-default' %>
 <% end %>
 
 <% content_for :table_filter do %>
@@ -14,17 +14,17 @@
       <div class="row">
         <div class="date-range-filter col-md-8">
           <div class="form-group">
-            <%= label_tag :start_date_gteq, Spree.t(:start_date_range) %>
+            <%= label_tag :start_date_gteq, t('spree.start_date_range') %>
             <div class="row no-padding-bottom">
               <div class="col-md-6">
                 <div class="input-group">
-                  <%= f.text_field :start_date_gteq, class: 'datepicker datepicker-from form-control', value: params[:q][:start_date_gteq], placeholder: Spree.t(:start) %>
+                  <%= f.text_field :start_date_gteq, class: 'datepicker datepicker-from form-control', value: params[:q][:start_date_gteq], placeholder: t('spree.start') %>
                   <span class="input-group-addon"><i class="icon icon-calendar"></i></span>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="input-group">
-                  <%= f.text_field :start_date_lteq, class: 'datepicker datepicker-to form-control', value: params[:q][:start_date_lteq], placeholder: Spree.t(:end) %>
+                  <%= f.text_field :start_date_lteq, class: 'datepicker datepicker-to form-control', value: params[:q][:start_date_lteq], placeholder: t('spree.end') %>
                   <span class="input-group-addon">
                     <i class="icon icon-calendar"></i>
                   </span>
@@ -37,13 +37,13 @@
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
-            <%= label_tag :affiliate_email_cont, Spree.t(:affiliate_email) %>
+            <%= label_tag :affiliate_email_cont, t('spree.affiliate_email') %>
             <%= f.text_field :affiliate_email_cont, size: 15, class: 'form-control' %>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <%= label_tag :paid, Spree.t(:status) %>
+            <%= label_tag :paid, t('spree.status') %>
             <%= f.select :paid_eq, [['paid', 1], ['unpaid', 0]], { selected: params[:q][:paid_eq], include_blank: true }, class: 'select2 js-filterable' %>
           </div>
         </div>
