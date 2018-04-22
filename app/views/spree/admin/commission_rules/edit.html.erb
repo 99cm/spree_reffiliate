@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:edit_commission_rule) %>
+  <%= t('spree.edit_commission_rule') %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_commission_rules_list), admin_commission_rules_path, class: 'btn btn-default' %>
+  <%= link_to_with_icon 'arrow-left', t('spree.back_to_commission_rules_list'), admin_commission_rules_path, class: 'btn btn-default' %>
 <% end %>
 
 <div data-hook="admin_commission_rule_edit_form_header">
