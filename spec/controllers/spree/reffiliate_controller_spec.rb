@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::ReffiliateController, type: :controller do
+RSpec.describe Spree::ReffiliateController, type: :controller do
   context "referral hyperlink" do
     it "redirects to root path" do
       spree_get :referral, code: 'referral-code'
