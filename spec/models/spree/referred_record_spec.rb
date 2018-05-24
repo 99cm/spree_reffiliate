@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::ReferredRecord, type: :model do
+RSpec.describe Spree::ReferredRecord, type: :model do
   before(:each) do
     @user = FactoryGirl.create(:user, email: FFaker::Internet.email)
     @referred = FactoryGirl.create(:user, email:  FFaker::Internet.email, referral_code: @user.referral.code)
