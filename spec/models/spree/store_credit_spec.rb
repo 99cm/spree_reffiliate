@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::StoreCredit, type: :model do
+RSpec.describe Spree::StoreCredit, type: :model do
 
   let!(:referral_category) { FactoryGirl.create(:store_credit_category, name: "Referral Credit") }
   let!(:referral_store_credit) { FactoryGirl.create(:store_credit, category_id: referral_category.id) }
