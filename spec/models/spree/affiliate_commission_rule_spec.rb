@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::AffiliateCommissionRule, type: :model do
+RSpec.describe Spree::AffiliateCommissionRule, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:affiliate).class_name('Spree::Affiliate') }
