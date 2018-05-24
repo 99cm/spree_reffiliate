@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::UsersController, type: :controller do
+RSpec.describe Spree::UsersController, type: :controller do
   let(:email) { 'mynew@email-address.com' }
   let(:admin_user) { create(:user) }
   let(:user) { create(:user, email: email) }
