@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe Spree::Affiliate::ConfirmationsController, type: :controller do
+RSpec.describe Spree::Affiliate::ConfirmationsController, type: :controller do
   stub_authorization!
   let!(:user) { double(Spree::User).as_null_object }
 
