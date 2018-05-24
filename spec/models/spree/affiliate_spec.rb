@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Affiliate, type: :model do
+RSpec.describe Spree::Affiliate, type: :model do
   it "should have a name" do
     affiliate = FactoryGirl.build(:affiliate, name: nil)
     expect(affiliate).to_not be_valid
