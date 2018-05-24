@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe Spree::Admin::CommissionsController, type: :controller do
+RSpec.describe Spree::Admin::CommissionsController, type: :controller do
   stub_authorization!
 
   describe '#pay' do
