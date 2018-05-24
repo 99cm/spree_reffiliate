@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Referral, type: :model do
+RSpec.describe Spree::Referral, type: :model do
   it "generates a code after created" do
     referral = FactoryGirl.build(:referral)
     expect{referral.save}.to change{referral.code}
