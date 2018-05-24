@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::Commission, type: :model do
+RSpec.describe Spree::Commission, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:transactions).class_name('Spree::CommissionTransaction').dependent(:restrict_with_error) }
