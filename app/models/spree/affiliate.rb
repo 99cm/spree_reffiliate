@@ -58,7 +58,7 @@ module Spree
 
       def create_user
         @user = Spree::User.find_or_initialize_by(email: email)
-        self.active_on_create = true if user.persisted?
+        self.active_on_create = true
         affiliate_role = Spree::Role.affiliate
         user.spree_roles << affiliate_role unless user.spree_roles.include?(affiliate_role)
         user.save!
@@ -77,7 +77,7 @@ module Spree
       end
 
       def send_activation_instruction
-        Spree::AffiliateMailer.activation_instruction(email).deliver_later
+        Spree::AffiliateMailer.activation_instruction(username).deliver_later
       end
 
       def invalid_rule(attributes)
