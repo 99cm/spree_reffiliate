@@ -57,7 +57,7 @@ module Spree
     private
 
       def create_user
-        @user = Spree::User.find_or_initialize_by(email: email)
+        @user = Spree::User.find_or_initialize_by(username: username)
         self.active_on_create = true
         affiliate_role = Spree::Role.affiliate
         user.spree_roles << affiliate_role unless user.spree_roles.include?(affiliate_role)
