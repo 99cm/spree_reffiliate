@@ -1,12 +1,14 @@
 module Spree
   class ReffiliateController < Spree::StoreController
     def referral
-      flash[:success] = Spree.t(:referral_code_applied)
+      flash[:success] = t('spree.referral_code_applied')
       session[:referral] = params[:code]
+      session[:current_store.name] =  'Ypill'
       redirect_to root_path
     end
 
     def affiliate
+      session[:current_store.name] =  'Ypill'
       session[:affiliate] = params[:path]
       affiliate = Spree::Affiliate.find_by(path: params[:path])
       if affiliate.nil? or affiliate.partial.blank? or !partial_exists affiliate.partial
