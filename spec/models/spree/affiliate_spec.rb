@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 RSpec.describe Spree::Affiliate, type: :model do
-  it "should have a name" do
-    affiliate = FactoryGirl.build(:affiliate, name: nil)
+  it 'should have a name' do
+    affiliate = FactoryBot.build(:affiliate, name: nil)
     expect(affiliate).to_not be_valid
   end
-  it "should have a path" do
-    affiliate = FactoryGirl.build(:affiliate, path: nil)
+  it 'should have a path' do
+    affiliate = FactoryBot.build(:affiliate, path: nil)
     expect(affiliate).to_not be_valid
   end
 
@@ -74,7 +74,7 @@ RSpec.describe Spree::Affiliate, type: :model do
           @affiliate = Spree::Affiliate.create(email: email, name: 'test', path: 'path')
         end
 
-        it { expect(Spree::User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
+        it { expect(User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
       end
 
       context 'when does not have affiliate role' do
@@ -82,7 +82,7 @@ RSpec.describe Spree::Affiliate, type: :model do
           @affiliate = Spree::Affiliate.create(email: email, name: 'test', path: 'path')
         end
 
-        it { expect(Spree::User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
+        it { expect(User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
       end
     end
 
@@ -95,7 +95,7 @@ RSpec.describe Spree::Affiliate, type: :model do
           @affiliate = Spree::Affiliate.create(email: email, name: 'test', path: 'path')
         end
 
-        it { expect(Spree::User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
+        it { expect(User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
       end
 
       context 'when does not have affiliate role' do
@@ -103,7 +103,7 @@ RSpec.describe Spree::Affiliate, type: :model do
           @affiliate = Spree::Affiliate.create(email: email, name: 'test', path: 'path')
         end
 
-        it { expect(Spree::User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
+        it { expect(User.find_by(email: email).spree_roles.where(name: 'affiliate').count).to eq 1 }
       end
     end
   end
