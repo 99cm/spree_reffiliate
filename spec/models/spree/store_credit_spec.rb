@@ -2,9 +2,9 @@ require 'spec_helper'
 
 RSpec.describe Spree::StoreCredit, type: :model do
 
-  let!(:referral_category) { FactoryGirl.create(:store_credit_category, name: "Referral Credit") }
-  let!(:referral_store_credit) { FactoryGirl.create(:store_credit, category_id: referral_category.id) }
-  let(:store_credit) { FactoryGirl.create(:store_credit) }
+  let!(:referral_category) { FactoryBot.create(:store_credit_category, name: "Referral Credit") }
+  let!(:referral_store_credit) { FactoryBot.create(:store_credit, category_id: referral_category.id) }
+  let(:store_credit) { FactoryBot.create(:store_credit) }
 
   describe 'associations' do
     it { is_expected.to have_one(:referred_record) }
@@ -31,6 +31,4 @@ RSpec.describe Spree::StoreCredit, type: :model do
       end
     end
   end
-
-
 end
