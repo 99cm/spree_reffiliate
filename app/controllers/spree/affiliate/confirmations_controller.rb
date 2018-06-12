@@ -1,5 +1,5 @@
 module Spree
-  class Affiliate::ConfirmationsController < Spree::UsersController
+  class Affiliate::ConfirmationsController < UsersController
 
     prepend_before_action :load_object, :load_affiliate, only: [:new, :create]
 
@@ -27,7 +27,7 @@ module Spree
       end
 
       def load_object
-        @user = Spree::User.find_by(email: @affiliate.email)
+        @user = User.find_by(email: @affiliate.email)
         redirect_to root_path, error: Spree.t(:user_not_found) unless @user
       end
   end
