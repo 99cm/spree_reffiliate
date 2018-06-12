@@ -19,10 +19,10 @@ Spree Reffiliate is a [Spree] Extension that adds the referral and affiliate fea
 + Affiliate will get a welcome mail, which will have activation link if affliate has not been present as a user in system.
 + Customize the affiliate view with a partial
 + Affiliate can get commission in two ways:
-  i. Order placement
-  ii. User Registration
-+ These commission amount can be defined from `affilate_commission_rules` on affiliate new/edit page.
-+ After successful user-creation/order-placement, a transaction will be created which will have the amound and commissionable(user/order).
+  (i) Order placement
+  (ii) User Registration
++ These commission amount can be defined from `affiliate_commission_rules` on affiliate new/edit page.
++ After successful user-creation/order-placement, a transaction will be created which will have the amount and commissionable(user/order).
 + Affilate can view it in account panel.
 + Affiliated user can have individual promotions
 + Admin is able to see affiliated users and orders from affiliate
@@ -34,7 +34,7 @@ Spree Reffiliate is a [Spree] Extension that adds the referral and affiliate fea
 To use the stable branch, add this line to your Gemfile:
 
 ```ruby
-gem 'spree_reffiliate', github: 'vinsol-spree-contrib/spree_reffiliate', branch: '3-1-stable'
+gem 'spree_reffiliate', github: '99cm/spree_reffiliate', branch: '3-1-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -59,7 +59,7 @@ Referral path is `/r/:code` and Affiliate path (assigned in the admin) is `/a/:p
 
 Once installed, you'll be able to access the following methods.
 
-#### Spree::User
+#### User
 + referred_by => user record
 + referral_count => user count
 + referred? => boolean
