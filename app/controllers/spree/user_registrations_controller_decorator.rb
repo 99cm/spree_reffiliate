@@ -7,7 +7,7 @@ Spree::UserRegistrationsController.class_eval do
   private
 
   def check_referral_and_affiliate
-    params[:spree_user].merge!(referral_code: session[:referral], affiliate_code: session[:affiliate])
+    params[:user].merge!(referral_code: session[:referral], affiliate_code: session[:affiliate])
   end
 
   def reset_referral_session
