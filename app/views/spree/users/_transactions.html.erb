@@ -7,9 +7,7 @@
         <tr data-hook="admin_affiliates_index_headers">
           <th><%= t('spree.reference') %></th>
           <th><%= t('spree.type') %></th>
-          <th>
-            <%= t('spree.date') %>
-          </th>
+          <th><%= t('spree.date') %></th>
           <th><%= t('spree.amount') %></th>
           <th><%= t('spree.locked') %></th>
         </tr>
@@ -17,7 +15,7 @@
       <tbody>
         <% @commission_transactions.each do |transaction|%>
           <tr id="<%= spree_dom_id transaction %>" data-hook="admin_transactions_index_rows" class="<%= cycle('odd', 'even')%>">
-            <% if transaction.commissionable_type.eql? 'Spree::User' %>
+            <% if transaction.commissionable_type.eql? 'User' %>
               <td class='transaction_name'><%=link_to transaction.commissionable.email, '' %></td>
             <% elsif transaction.commissionable_type.eql? 'Spree::Order' %>
               <td class='transaction_name'><%=link_to transaction.commissionable.number, '' %></td>
