@@ -61,7 +61,7 @@ module Spree
         self.active_on_create = true
         affiliate_role = Spree::Role.affiliate
         user.spree_roles << affiliate_role unless user.spree_roles.include?(affiliate_role)
-        user.save!
+        user.save
       end
 
       def generate_activation_token
